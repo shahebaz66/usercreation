@@ -42,7 +42,7 @@ const userSchema = new Schema({
 const User= mongoose.model('User', userSchema);
 
 app.post('/data',async (req,res)=>{
-    if(req.body.name in ['John', 'roshan', 'Doe']){
+    if(req.body.name =='John' ||req.body.name == 'roshan' ||req.body.name == 'Doe'){
         if(validator.isMobilePhone(req.body.phone.toString())){
             await User.create(req.body);
             res.json({message:"created user"});
