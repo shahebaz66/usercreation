@@ -55,7 +55,7 @@ app.post('/data',async (req,res)=>{
 });
 app.get('/data',async (req,res)=>{
     const data=await User.find({});
-    res.json(data)
+    res.json(data);
 });
 app.listen(3000,()=>{
     console.log("server listening at 3000");
